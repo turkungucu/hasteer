@@ -1,0 +1,5 @@
+<small>
+    This message was sent to you because you have elected to receive email communications from Hasteer.com.<br/>
+    We sent this email to: $to<br/>
+    If you no longer wish to receive e-mails from Hasteer.com, click here to <a href="$unsubscribe-url">unsubscribe</a>.
+</small>

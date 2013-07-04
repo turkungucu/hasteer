@@ -1,0 +1,15 @@
+#if($success)
+    We are pleased to inform you that deal for <b>$productName</b> has 
+    successfully reached the required number of participants. Your order is being 
+    shipped and cannot be changed by you or by our customer service department.
+    We will charge your payment method at this time.
+    <p/>
+    You will receive a separate shipment notification email as soon as we ship
+    your order <b>#$orderSummaryId</b>. Estimated processing time before shipping
+    is 2-3 days.
+#else
+    We regret to inform you that deal for <b>$productName</b> has not reached 
+    the required number of participants. Your order <b>#$orderSummaryId</b> will
+    not be shipped, and your payment method will not be charged. You may check
+    the final status of this deal in the <a href="$myDealsUrl">My Deals</a> page.
+#end

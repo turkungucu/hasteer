@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="TasksForm" type="com.struts.form.TasksForm"/>
+        <form-bean name="RewardsSummaryForm" type="com.struts.form.RewardsSummaryForm"/>
+        <form-bean name="VerifyJoinDealForm" type="com.struts.form.VerifyJoinDealForm"/>
+        <form-bean name="ManageShipAddrsForm" type="com.struts.form.ManageShipAddrsForm"/>
+        <form-bean name="MyProductsForm" type="com.struts.form.MyProductsForm"/>
+        <form-bean name="ChangePasswordForm" type="com.struts.form.ChangePasswordForm"/>
+        <form-bean name="ChangeUsernameEmailForm" type="com.struts.form.ChangeUsernameEmailForm"/>
+        <form-bean name="MyAccountForm" type="com.struts.form.MyAccountForm"/>
+        <form-bean name="SearchForm" type="com.struts.form.SearchForm"/>
+        <form-bean name="ProductDetailsForm" type="com.struts.form.ProductDetailsForm"/>
+        <form-bean name="LoginForm" type="com.struts.form.LoginForm"/>
+        <form-bean name="RegistrationConfirmationForm" type="com.struts.form.RegistrationConfirmationForm"/>
+        <form-bean name="ForgotMyPasswordForm" type="com.struts.form.ForgotMyPasswordForm"/>
+        <form-bean name="CreateAccountForm" type="com.struts.form.CreateAccountForm"/>
+        <form-bean name="JoinDealForm" type="com.struts.form.JoinDealForm"/>
+        <form-bean name="ProductSetupForm" type="com.struts.form.ProductSetupForm"/>
+        <form-bean name="CreditCardSetupForm" type="com.struts.form.CreditCardSetupForm"/>
+        <form-bean name="DealSetupForm" type="com.struts.form.DealSetupForm"/>
+        <form-bean name="MyDealsForm" type="com.struts.form.MyDealsForm"/>
+        <form-bean name="ServiceContractForm" type="com.struts.form.ServiceContractForm"/>
+        <form-bean name="PageNotFoundForm" type="com.struts.form.PageNotFoundForm"/>
+    </form-beans>
+   
+    <global-exceptions>
+        <exception
+	      key="error.global.mesage"
+	      type="java.lang.Exception"
+	      path="/common/PageNotFound.do" />
+    </global-exceptions>
+
+    <global-forwards>
+        
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/Home"
+            forward="hasteer.web.index.definition">
+        </action>
+
+        <action path="/dashboard/MyAccount"
+                input="hasteer.web.dashboard.myAccount.definition"
+                name="MyAccountForm"
+                type="com.struts.action.MyAccountAction"
+                validate="false">
+            <forward name="success" path="hasteer.web.dashboard.myAccount.definition"/>
+            <forward name="login" path="hasteer.web.auth.login.definition" />
+        </action>
+
+        <action path="/auth/Login"
+              type="com.struts.action.LoginAction"
+              name="LoginForm"
+              input="hasteer.web.auth.login.definition"
+              validate="true"
+              scope="request">
+            <forward name="success" path="hasteer.web.dashboard.myAccount.definition"/>
+            <forward name="failure" path="hasteer.web.auth.login.definition"/>
+        </action>
+
+        <action path="/auth/RegistrationConfirmation"
+              type="com.struts.action.RegistrationConfirmationAction"
+              name="RegistrationConfirmationForm"
+              input="hasteer.web.auth.registrationConfirmation.definition"
+              validate="true"
+              scope="request">
+            <forward name="success" path="hasteer.web.auth.registrationConfirmation.definition"/>
+            <forward name="failure" path="hasteer.web.auth.registrationConfirmation.definition"/>
+        </action>
+
+         <action path="/auth/ForgotMyPassword"
+              type="com.struts.action.ForgotMyPasswordAction"
+              name="ForgotMyPasswordForm"
+              input="hasteer.web.auth.forgotMyPassword.definition"
+              validate="true"
+              scope="request">
+            <forward name="success" path="hasteer.web.auth.forgotMyPassword.definition"/>
+            <forward name="failure" path="hasteer.web.auth.forgotMyPassword.definition"/>
+        </action>
+
+        <action path="/auth/Logout"
+              type="com.struts.action.LogoutAction"
+              validate="false"
+              scope="request">
+            <forward name="success" path="hasteer.web.auth.logout.definition"/>
+        </action>
+
+        <action
+            path="/auth/CreateAccount"
+            type="com.struts.action.CreateAccountAction"
+            name="CreateAccountForm"
+            scope="request"
+            input="hasteer.web.auth.createAccount.definition"
+            validate="true">
+              <forward name="success" path="hasteer.web.auth.registrationThankYou.definition" />
+              <forward name="failure" path="hasteer.web.auth.createAccount.definition"/>
+        </action>
+
+        <action
+            path="/deals/JoinDeal"
+            type="com.struts.action.JoinDealAction"
+            name="JoinDealForm"
+            scope="request"
+            input="hasteer.web.deals.joinDeal.definition"
+            validate="false">
+              <forward name="success" path="hasteer.web.deals.joinDeal.definition" />
+              <forward name="failure" path="hasteer.web.deals.joinDeal.definition"/>
+              <forward name="next" path="/dashboard/CreditCardSetup.do" redirect="true"/>
+              <forward name="home" path="hasteer.web.index.definition"/>
+              <forward name="verify" path="/deals/VerifyJoinDeal.do" redirect="true"/>
+        </action>
+
+        <action
+            path="/deals/VerifyJoinDeal"
+            input="hasteer.web.deals.verifyJoinDeal.definition"
+            name="VerifyJoinDealForm"
+            scope="request"
+            type="com.struts.action.VerifyJoinDealAction">
+                <forward name="next" path="/deals/JoinDealConfirmed.do" redirect="true" />
+                <forward name="previous" path="/dashboard/buyer/ManageShippingAddresses.do" redirect="true" />
+                <forward name="success" path="hasteer.web.deals.verifyJoinDeal.definition" />
+                <forward name="failure" path="hasteer.web.deals.verifyJoinDeal.definition" />
+         </action>
+
+         <action
+            path="/deals/JoinDealConfirmed"
+            input="hasteer.web.deals.joinDealConfirmed.definition"
+            name=""
+            scope="request"
+            type="com.struts.action.JoinDealConfirmedAction">
+                <forward name="success" path="hasteer.web.deals.joinDealConfirmed.definition" />
+                <forward name="failure" path="hasteer.web.deals.joinDealConfirmed.definition" />
+         </action>
+
+        <action
+            path="/product/ProductDetails"
+            input="hasteer.web.product.productDetails.definition"
+            name="ProductDetailsForm"
+            scope="request"
+            type="com.struts.action.ProductDetailsAction"
+            validate="false">
+                <forward name="success" path="hasteer.web.product.productDetails.definition" />
+         </action>
+
+        <action
+            path="/Search"
+            input="hasteer.web.deals.search.definition"
+            name="SearchForm"
+            scope="request"
+            type="com.struts.action.SearchAction"
+            validate="true">
+                <forward name="success" path="hasteer.web.deals.search.definition" />
+                <forward name="failure" path="hasteer.web.deals.search.definition" />
+         </action>
+         
+         <action
+            path="/dashboard/ChangeUsernameEmail"
+            input="hasteer.web.dashboard.changeUsernameEmail.definition"
+            name="ChangeUsernameEmailForm"
+            scope="request"
+            type="com.struts.action.ChangeUsernameEmailAction"
+            validate="true">
+                <forward name="success" path="hasteer.web.dashboard.changeUsernameEmail.definition" />
+         </action>
+
+         <action
+            path="/dashboard/ChangePassword"
+            input="hasteer.web.dashboard.changePassword.definition"
+            name="ChangePasswordForm"
+            scope="request"
+            type="com.struts.action.ChangePasswordAction"
+            validate="true">
+                <forward name="success" path="hasteer.web.dashboard.changePassword.definition" />
+         </action>
+
+         <action
+            path="/dashboard/seller/ProductSetup"
+            input="hasteer.web.dashboard.seller.productSetup.definition"
+            name="ProductSetupForm"
+            scope="request"
+            type="com.struts.action.ProductSetupAction"
+            validate="true">
+                <forward name="success" path="hasteer.web.dashboard.seller.productSetup.definition" />
+                <forward name="failure" path="hasteer.web.dashboard.seller.productSetup.definition" />
+                <forward name="back" path="/dashboard/seller/MyProducts.do" redirect="true" />
+         </action>
+
+         <action
+            path="/dashboard/seller/MyProducts"
+            input="hasteer.web.dashboard.seller.myProducts.definition"
+            name="MyProductsForm"
+            scope="request"
+            type="com.struts.action.MyProductsAction"
+            validate="false">
+                <forward name="success" path="hasteer.web.dashboard.seller.myProducts.definition" />
+                <forward name="failure" path="hasteer.web.dashboard.seller.myProducts.definition" />
+         </action>
+
+         <action
+            path="/dashboard/CreditCardSetup"
+            input="hasteer.web.dashboard.creditCardSetup.definition"
+            name="CreditCardSetupForm"
+            scope="request"
+            type="com.struts.action.CreditCardSetupAction"
+            validate="true">
+                <forward name="success" path="hasteer.web.dashboard.creditCardSetup.definition" />
+                <forward name="failure" path="hasteer.web.dashboard.creditCardSetup.definition" />
+                <forward name="next" path="/dashboard/buyer/ManageShippingAddresses.do" redirect="true" />
+                <forward name="verify" path="/deals/VerifyJoinDeal.do" redirect="true" />
+                <forward name="previous" path="/deals/JoinDeal.do" redirect="true" />
+                <!--
+                <forward name="back" redirect="true" path="/dashboard/MyCreditCards.do" />
+                -->
+         </action>
+
+         <action
+            path="/dashboard/seller/DealSetup"
+            input="hasteer.web.dashboard.seller.dealSetup.definition"
+            name="DealSetupForm"
+            scope="request"
+            type="com.struts.action.DealSetupAction"
+            validate="true">
+                <forward name="success" path="hasteer.web.dashboard.seller.dealSetup.definition" />
+                <forward name="failure" path="hasteer.web.dashboard.seller.dealSetup.definition" />
+                <forward name="back" path="/dashboard/seller/ManageDeals.do" redirect="true" />
+         </action>
+
+         <action
+            path="/dashboard/buyer/MyDeals"
+            input="hasteer.web.dashboard.buyer.myDeals.definition"
+            name="MyDealsForm"
+            scope="request"
+            type="com.struts.action.MyDealsAction"
+            validate="false">
+                <forward name="success" path="hasteer.web.dashboard.buyer.myDeals.definition" />
+                <forward name="failure" path="hasteer.web.dashboard.buyer.myDeals.definition" />
+         </action>
+
+         <action
+            path="/dashboard/seller/ManageDeals"
+            input="hasteer.web.dashboard.seller.manageDeals.definition"
+            name="MyDealsForm"
+            scope="request"
+            type="com.struts.action.MyDealsAction"
+            validate="false">
+                <forward name="success" path="hasteer.web.dashboard.seller.manageDeals.definition" />
+                <forward name="failure" path="hasteer.web.dashboard.seller.manageDeals.definition" />
+         </action>
+         
+         <action
+            path="/dashboard/buyer/ManageShippingAddresses"
+            input="hasteer.web.dashboard.buyer.shipAddrSetup.definition"
+            name="ManageShipAddrsForm"
+            scope="request"
+            type="com.struts.action.ManageShipAddrsAction">
+                <forward name="failure" path="hasteer.web.dashboard.buyer.shipAddrSetup.definition" />
+                <forward name="success" path="hasteer.web.dashboard.buyer.shipAddrSetup.definition" />
+                <forward name="next" path="/deals/VerifyJoinDeal.do" redirect="true" />
+                <forward name="previous" path="/dashboard/CreditCardSetup.do" redirect="true" />
+         </action>
+
+        <action
+            path="/dashboard/RewardsSummary"
+            input="hasteer.web.dashboard.rewardsSummary.definition"
+            name="RewardsSummaryForm"
+            scope="request"
+            type="com.struts.action.RewardsSummaryAction">
+                <forward name="success" path="hasteer.web.dashboard.rewardsSummary.definition" />
+         </action>
+
+         <action
+            path="/internal/Tasks"
+            input="hasteer.web.internal.Tasks.definition"
+            name="TasksForm"
+            scope="request"
+            type="com.struts.action.TasksAction">
+                <forward name="success" path="hasteer.web.internal.Tasks.definition" />
+                <forward name="failure" path="hasteer.web.internal.Tasks.definition" />
+         </action>
+
+         <action
+            path="/common/legal/ServiceContract"
+            input="hasteer.web.common.legal.serviceContract.definition"
+            name="ServiceContractForm"
+            scope="request"
+            type="com.struts.action.ServiceContractAction">
+                <forward name="success" path="hasteer.web.common.legal.serviceContract.definition" />
+                <forward name="failure" path="hasteer.web.common.legal.serviceContract.definition" />
+         </action>
+
+         <action
+            path="/common/PageNotFound"
+            input="hasteer.web.common.pageNotFound.definition"
+            name="PageNotFoundForm"
+            scope="request"
+            type="com.struts.action.PageNotFoundAction">
+                <forward name="success" path="hasteer.web.common.pageNotFound.definition" />
+         </action>
+
+         <action
+            path="/common/faq"
+            input="hasteer.web.common.faq.definition"
+            scope="request"
+            type="com.struts.action.FaqAction">
+                <forward name="success" path="hasteer.web.common.faq.definition" />
+         </action>
+
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="properties/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+
+</struts-config>

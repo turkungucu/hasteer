@@ -1,0 +1,618 @@
+@import url('/Hasteer/css/slider.css');
+@import url('/Hasteer/css/datatable.css');
+@import url('/Hasteer/css/jquery-ui-1.8.4.custom.css');
+@import url('/Hasteer/css/deal-tooltip.css');
+@import url('/Hasteer/css/basic-modal.css');
+@import url('/Hasteer/css/howitworks.css');
+@import url('/Hasteer/css/countdown.css');
+
+html,body {
+    /*georgia,"helvetica neue","microsoft sans serif",arial,sans-serif*/
+    font: 12px Arial, Helvetica, sans-serif;
+    margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+    padding: 0;
+    color: #555555;
+    background-color: #ffffff;
+    height:100%;
+}
+
+input, textarea, select {
+    border: 1px solid #dddddd;
+    padding: 3px;
+}
+
+ul#dots {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin: 0;
+    padding-left: 15px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+body a {
+    text-decoration: none;
+    color: blue;
+}
+
+body a:hover {
+    text-decoration: underline;
+}
+
+img {
+    border: 0px;
+}
+
+.logo {
+    background: transparent url("/Hasteer/images/logo.png") no-repeat left top;
+    position: absolute;
+    width: 234px;
+    height: 71px;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.header-upper-container {
+    background-color: #43C6DB;
+    display:block;
+    margin:0;
+    padding:0;
+    position:relative;
+    z-index:98;
+    height: 36px;
+    color: #ffffff;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.header-upper-container a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header-upper-container a:hover {
+    text-decoration: underline;
+}
+
+.header-lower-outer-container {
+    background-color: #eeeeee;
+    border-bottom: 1px solid #e5e5e5;
+    display:block;
+    margin:0;
+    padding:0;
+    position:relative;
+    z-index:98;
+    height: 80px;
+    color: #FF0000;
+}
+
+.header-lower-inner-container {
+    margin:0 auto;
+    position:relative;
+    width:740px;
+    height:80px;
+    z-index:101;
+}
+
+.header-core {
+    position:absolute;
+    bottom:10px;
+    width:100%;
+}
+
+.header-lower-outer-container a {
+    color: #FF0000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header-lower-outer-container a:hover {
+    text-decoration: underline;
+}
+
+#content-container {
+    padding-bottom:5%;
+}
+
+#outer-container {
+    min-height:100%;
+    position:relative;
+}
+
+.footer {
+    background: #eeeeee none repeat scroll 0 0;
+    border-top: 1px solid #e5e5e5;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #666666;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.main-body {
+    width: 780px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+td#label {
+    text-align:right;
+    font-size:15px;
+}
+
+.page-title {
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.page-sub-title {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.page-container-white {
+   border:1px solid #E5E5E5;
+   padding: 10px;
+   background-color: #FFFFFF;
+}
+
+.page-container-gray {
+   border:1px solid #e5e5e5;
+   padding: 10px;
+   background-color: #f6f6f6;
+}
+
+.red-button {
+    border:1px solid #444444;
+    background-image: url("/Hasteer/images/buttons/btn-bg-default.png");
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor:pointer;
+    overflow:hidden;
+    padding:4px;
+}
+
+.gray-button {
+    border:1px solid #cccccc;
+    background-image: url("/Hasteer/images/buttons/btn-bg-gray.png");
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    color: #43C6DB;
+    font-weight: bold;
+    cursor:pointer;
+    overflow:hidden;
+    padding:4px;
+}
+
+.dark-gray-button {
+    border:1px solid #444444;
+    background-image: url("/Hasteer/images/buttons/btn-bg-dark-gray.png");
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    color: #ffffff;
+    font-weight: bold;
+    cursor:pointer;
+    overflow:hidden;
+    padding:4px;
+}
+
+.turq-button {
+    border:1px solid #cccccc;
+    background-image: url("/Hasteer/images/buttons/btn-bg-turq.png");
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    color: #ffffff;
+    font-weight: bold;
+    cursor:pointer;
+    overflow:hidden;
+    padding:4px;
+}
+
+.light-gray-button {
+    border:1px solid #e5e5e5;
+    background-image: url("/Hasteer/images/buttons/btn-bg-light-gray.png");
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    color: #43C6DB;
+    font-weight: bold;
+    cursor:pointer;
+    overflow:hidden;
+    padding:4px;
+}
+
+a.red-link {
+    color: #cc0000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.red-link:hover {
+    text-decoration: underline;
+}
+
+.dealbox-bg-big {
+    width: 586px;
+    height: 300px;
+}
+
+.dealbox-bg-small {
+    width: 200px;
+    height: 300px;
+}
+
+.dealbox-numbers {
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.cumulative-totals {
+    font-weight: normal;
+    color: #ff0000;
+    font-size: 20px;
+}
+
+p#product-container {
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.product-title {
+    font-size: 18px;
+    color: #000000;
+}
+
+.product-image {
+    border:1px solid #e5e5e5;
+}
+
+.product-image-hover {
+    border:1px solid #cc0000;
+}
+
+.product-image-container {
+    border:1px solid #e5e5e5;
+    min-height: 290px;
+    max-width: 330px;
+    width: 330px;
+    text-align: center;
+    padding-top: 15px;
+    margin: 0px;
+}
+
+#expand-icon {
+    background:transparent url("/Hasteer/images/icons/icon-view.gif") no-repeat left top;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 65px;
+    left: 30px;
+}
+
+#active-image-container {
+    cursor: pointer;
+    height: 225px;
+}
+
+#thumbnail-container {
+    padding-left: 15px;
+    padding-top: 15px;
+    width: 320px;
+    text-align: left;
+}
+
+#thumbnail-container img {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.small-text {
+    font-size: 11px;
+}
+
+.small-text-silver {
+    color: #43C6DB;
+    font-size:10px;
+}
+
+.small-text-turq {
+    color: #43C6DB;
+    font-size:10px;
+}
+
+.small-text-red {
+    color:red;
+    font-size:10px;
+}
+
+.small-text-green {
+    color:green;
+    font-size:10px;
+}
+
+.myaccount-box {
+    border-top: 1px dotted #666666;
+    background-color: #eeeeee;
+    height: 100px;
+    width: 300px;
+    padding-left: 15px;
+}
+
+.myaccount-box-title {
+    font-size: 18px;
+}
+
+.myaccount-box a {
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.myaccount-box a:hover {
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.messageCritical {
+	border:1px solid #FFA9A9;
+	padding: 10px 10px 10px 35px;
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: #FFE4E4;
+	background-image: url("/www/images/dashboard/icon_error.gif");
+	background-repeat: no-repeat;
+	background-position: 1% 50%;
+	margin-bottom: 20px;
+}
+
+.messageCriticalWide {
+	border:1px solid #FFA9A9;
+	padding: 10px 10px 10px 35px;
+	background-color: #FFE4E4;
+	background-image: url("/www/images/dashboard/icon_error.gif");
+	background-repeat: no-repeat;
+	background-position: 1% 50%;
+	margin-bottom: 20px;
+}
+
+.messageNormal {
+	border:1px solid #D8D881;
+	padding: 10px;
+	background-color: #ffc;
+        font-size: 13px;
+}
+
+.messageRewards {
+	border:1px solid #43C6DB;
+	padding: 10px;
+	background-color: #E4EDFF;
+        font-size: 13px;
+}
+.messageActionLink {
+	text-align: right;
+	margin-top: 5px;
+}
+.messageSuccess {
+	border:1px solid #ccc;
+	padding: 10px 10px 10px 35px;
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: #E4EDFF;
+	background-image: url("/www/images/dashboard/icon_success.gif");
+	background-repeat: no-repeat;
+	background-position: 1% 50%;
+	margin-bottom: 20px;
+}
+
+.messageSuccessWide {
+	border:1px solid #ccc;
+	padding: 10px 10px 10px 35px;
+	background-color: #E4EDFF;
+	background-image: url("/www/images/dashboard/icon_success.gif");
+	background-repeat: no-repeat;
+	background-position: 1% 50%;
+	margin-bottom: 20px;
+}
+
+.messageWarningWide {
+	border:1px solid #D8D881;
+	padding: 10px 10px 10px 35px;
+	background-color: #FFFFCC;
+	background-image: url("/www/images/dashboard/icon_warning.gif");
+	background-repeat: no-repeat;
+	background-position: 1% 50%;
+	margin-bottom: 20px;
+}
+
+.messageWarningWideNoIcon {
+	border:1px solid #D8D881;
+	padding: 10px 10px 10px 10px;
+	background-color: #FFFFCC;
+	margin-bottom: 20px;
+}
+
+.messageWarning {
+	border:1px solid #D8D881;
+	padding: 10px 10px 10px 35px;
+	margin-left: 10%;
+	margin-right: 10%;
+	background-color: #FFFFCC;
+	background-image: url("/www/images/dashboard/icon_warning.gif");
+	background-repeat: no-repeat;
+	background-position: 1% 50%;
+	margin-bottom: 20px;
+}
+
+.headerNormalWideNoIcon {
+	font-weight:bold;
+	font-size:15px;
+	border:1px solid #cccccc;
+	padding: 5px 10px 5px 10px;
+	background-color: #eeeeee;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	/*background-image: url("/www/images/struts-layout/ast.gif");
+	background-repeat: no-repeat;
+	background-position: 99% 50%;*/
+}
+
+.summary-table-header {
+    width: 97%;
+    height: 20px;
+    background-color: #eeeeee;
+    margin-bottom: 3px;
+    padding: 5px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.summary-table-body {
+    width: 97%;
+    background-color: #f6f6f6;
+    height: auto;
+    padding: 5px;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip span {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    display: none;
+    min-width: 50px;
+    padding: 3px 8px;
+    white-space: nowrap;
+    font-size: 11px;
+    text-align: left;
+    color: white;
+    background-color: #333333;
+}
+
+.tooltip span small {
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    border-bottom: 6px solid #333333;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+
+.tooltip span.side {
+    position: absolute;
+    left: 25px;
+    top: -15px;
+    display: none;
+    width: 250px;
+    padding: 3px 8px;
+    font-size: 11px;
+    text-align: left;
+    color: white;
+    background-color: #333333;
+    white-space: normal;
+}
+
+.tooltip span.side small {
+    border-color: transparent #333333 transparent transparent;
+    border-style: solid;
+    border-width: 7px;
+    height:0;
+    width:0;
+    position:absolute;
+    top:2px;
+    left:-14px;
+}
+
+.tooltip:hover span { display: block; z-index: 1; text-decoration: none;}
+
+.tooltip-icon {
+    font-size: 10px;
+    vertical-align: top;
+    font-weight: bold;
+    cursor: pointer;
+    color: #cc0000;
+}
+
+a#tt {
+    text-decoration: none;
+}
+
+a#img {
+    outline: none;
+    text-decoration: none;
+}
+
+#newsletter-container {
+    height: 90px;
+    padding: 10px;
+}
+
+.tagcloud-container {
+    width: 570px;
+    height: 100px;
+}
+
+.tagcloud-container .wrapper {
+    width: 576px;
+    height: 100px;
+    border:1px solid #E5E5E5;
+    background-image: url("/Hasteer/images/deal_box_bg.jpg");
+    background-repeat:repeat-x;
+    background-position: 0% 50%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 5px;
+}
+
+#tagCloud {
+  text-align:center; padding:5px;
+  overflow:auto; font-size:70%; font-family:arial;
+}
+
+#tagList { margin:0; padding:0; }
+
+#tagList li {
+  list-style-type:none; float:left; margin:0 10px; height:55px;
+}
+
+#tagList li a { text-decoration:none; color:#444444; }
+
+#tagList li a:hover { text-decoration:underline; }
+
+.faq-container {
+    margin-bottom: 20px;
+}
+
+.faq-answer {
+    background-color: #f6f6f6;
+    text-indent: 5px;
+    border: 1px dotted #e5e5e5;
+    margin-left: 20px;
+    margin-top: 20px;
+    min-height: 50px;
+    padding: 10px;
+    line-height: 20px;
+}
+
+.error {
+    border:1px solid #FFA9A9;
+    background-color: #FFE4E4;
+}

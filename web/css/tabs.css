@@ -1,0 +1,58 @@
+.tabs {
+    background: none repeat scroll 0 0 #e7e6da;
+    margin: 8px auto;
+    padding: 5px 5px;
+    position: relative;
+}
+
+.tabs li, .tabs ul {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.tabs li {
+    float: left;
+    list-style: none outside none;
+}
+
+.tabs div {
+    background: none repeat scroll 0 0 #ffffff;
+    clear: left;
+    padding: 10px 10px 8px;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.tabs ul a {
+    background: none repeat scroll 0 0 #eeeeee;
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+    margin-right: 5px;
+    padding: 6px 10px;
+    text-decoration: none !important;
+    color: #555555;
+}
+
+.tabs ul a.selected, .tabs ul a.selected:hover  {
+    background: none repeat scroll 0 0 #ffffff;
+    cursor: default;
+    margin-bottom: 0;
+    color: #cc0000;
+}
+
+.tabs ul a:hover {
+    background: none repeat scroll 0 0 #cccccc;
+}
+
+/* hack to overwrite .tabs ul,li style in product page */
+#desc li, #desc ul {
+    margin-left: 10px;
+    padding: 0 0 0 5px;
+}
+
+#desc li {
+    float: none;
+    list-style: disc outside none;
+}

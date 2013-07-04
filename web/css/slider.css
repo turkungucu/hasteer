@@ -1,0 +1,42 @@
+/*
+    anythingSlider v1.0
+    
+    By Chris Coyier: http://css-tricks.com
+    with major improvements by Doug Neiner: http://pixelgraphics.us/
+    based on work by Remy Sharp: http://jqueryfordesigners.com/
+*/
+
+.hotdeals-container                     { width: 550px; height: 325px; }
+.hotdeals-container .wrapper            { width: 550px; height: 300px; border:1px solid #E5E5E5; background-repeat:repeat-x; position: relative; top: 0; left: 0; margin-bottom: 5px; }
+.hotdeals-container .wrapper ul         { width: 99999px; list-style: none; position: absolute; top: 0px; left: 0px; margin: 0pt; padding: 0pt; }
+.hotdeals-container ul li               { display: block; float: left; padding: 0; height: 300px; width: 550px; margin: 0; }
+.hotdeals-container .arrow              { padding: 0px 2px; background: #ffffff; color: red; border:1px solid #E5E5E5; text-decoration:none; float: right; margin-left: 3px; }
+.hotdeals-container .arrow:hover        { padding: 0px 2px; background: #ff0000; color: white; border:1px solid #E5E5E5; cursor: pointer;}
+
+.pastdeals-container                    { width: 586px; height: 325px; }
+.pastdeals-container .wrapper           { width: 586px; height: 300px; border:1px solid #E5E5E5; background-repeat:repeat-x; position: relative; top: 0; left: 0; margin-bottom: 5px; }
+.pastdeals-container .wrapper ul        { width: 99999px; list-style: none; position: absolute; top: 0px; left: 0px; margin: 0pt; padding: 0pt; }
+.pastdeals-container ul li              { display: block; float: left; padding: 0; height: 300px; width: 586px; margin: 0; }
+.pastdeals-container .arrow             { padding: 0px 2px; background: #ffffff; color: red; border:1px solid #E5E5E5; text-decoration:none; float: right; margin-left: 3px; }
+.pastdeals-container .arrow:hover       { padding: 0px 2px; background: #ff0000; color: white; border:1px solid #E5E5E5; cursor: pointer;}
+.pastdeals-container .label-container   { float: left; width: 50px; padding-top: 3px; }
+
+#thumbNav                               { padding-left: 0px; }
+#thumbNav a                             { padding: 0px 2px; background: #ffffff; color: red; border:1px solid #E5E5E5; text-decoration:none; }
+#thumbNav a:hover                       { padding: 0px 2px; background: #ff0000; color: white; border:1px solid #E5E5E5; }
+#thumbNav a.cur                         { padding: 0px 2px; background: #ff0000; color: white; border:1px solid #E5E5E5; }
+
+#start-stop                             { background: green; background-image: url(../images/slider/cellshade.png); background-repeat: repeat-x; color: white; padding: 2px 5px; width: 40px; float: right; margin-top: -2px; text-align: center; -moz-border-radius-bottomleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -webkit-border-bottom-left-radius: 5px; }
+#start-stop.playing                     { background-color: red; color: white; }
+#start-stop.notplaying                  { background-color: green; color: white; }
+#start-stop.playing:hover               { background-color: red; color: white; }
+#start-stop.notplaying:hover            { background-color: green; color: white; }
+#start-stop:hover                       { background-image: none; color: white; }
+
+/*
+  Prevents
+*/
+.hotdeals-container .wrapper ul ul          { position: static; margin: 0; background: none; overflow: visible; width: auto; border: 0; }
+.hotdeals-container .wrapper ul ul li       { float: none; height: auto; width: auto; background: none; }
+.pastdeals-container .wrapper ul ul         { position: static; margin: 0; background: none; overflow: visible; width: auto; border: 0; }
+.pastdeals-container .wrapper ul ul li      { float: none; height: auto; width: auto; background: none; }

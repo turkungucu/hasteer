@@ -1,0 +1,79 @@
+#dealPopupContainer
+{
+    position:absolute;
+    left:0;
+    top:0;
+    display:none;
+    z-index: 20000;
+}
+
+.dealPopupPopup
+{
+}
+
+#dealPopupContent
+{
+    background-color: #444444;
+    min-width: 175px;
+    min-height: 50px;
+    color: #ffffff;
+    font-size: 11px;
+}
+
+.dealPopupPopup .dealPopupImage
+{
+    margin: 5px;
+    margin-right: 15px;
+}
+
+.dealPopupPopup .corner 
+{
+    width: 19px;
+    height: 15px;
+}
+    
+.dealPopupPopup .topLeft 
+{
+    background: url(../images/tooltip/balloon_topLeft.png) no-repeat;
+    background-position: bottom;
+}
+    
+.dealPopupPopup .bottomLeft 
+{
+    background: url(../images/tooltip/balloon_bottomLeft.png) no-repeat;
+}
+    
+.dealPopupPopup .left 
+{
+    background: url(../images/tooltip/balloon_left.png) repeat-y;
+}
+    
+.dealPopupPopup .right 
+{
+    background: url(../images/tooltip/balloon_right.png) repeat-y;
+}
+    
+.dealPopupPopup .topRight 
+{
+    background: url(../images/tooltip/balloon_topRight.png) no-repeat;
+    background-position: bottom;
+}
+    
+.dealPopupPopup .bottomRight 
+{
+    background: url(../images/tooltip/balloon_bottomRight.png) no-repeat;
+}
+    
+.dealPopupPopup .top 
+{
+    background: url(../images/tooltip/balloon_top.png) repeat-x;
+    background-position: bottom;
+    border: 0px;
+}
+    
+.dealPopupPopup .bottom 
+{
+    background: url(../images/tooltip/balloon_bottom.png) repeat-x;
+    text-align: center;
+    border: 0px;
+}

@@ -1,0 +1,74 @@
+
+.hiw-number {
+    font-size: 60px;
+    color: #ffffff;
+    padding: 5px 22px 5px 22px;
+}
+
+.hiw-number-smaller {
+    font-size: 30px;
+    color: #ffffff;
+    padding: 5px 15px 5px 15px;
+    display: table-cell;
+}
+
+.hiw-header {
+    font-size: 35px;
+    background-color: lightgray;
+    padding-left: 15px;
+    padding-bottom: 9px;
+    vertical-align: bottom;
+
+    -moz-box-shadow: 2px 3px 4px #555;
+    -webkit-box-shadow: 2px 0px 4px #555;
+    box-shadow: 2px 0px 4px #555;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#555555')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#555555');
+}
+
+.hiw-body {
+    font-size: 18px;
+    background-color: #f6f6f6;
+    padding-left: 15px;
+    padding-right: 28px;
+    vertical-align: top;
+
+    -moz-box-shadow: 2px 2px 4px #555;
+    -webkit-box-shadow: 2px 2px 4px #555;
+    box-shadow: 2px 2px 4px #555;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#555555')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#555555');
+}
+
+.hiw-header span.blue {
+    color: #43C6DB;
+}
+
+.hiw-header span.red {
+    color: #cc0000;
+}
+
+.hiw-header span.green {
+    color: green;
+}
+
+.hiw-header span.white {
+    color: #ffffff;
+}
+
+.hiw-body p.blue {
+    color: #43C6DB;
+}
+
+.hiw-body p.red {
+    color: #cc0000;
+}
+
+.hiw-body p.green {
+    color: green;
+}
+

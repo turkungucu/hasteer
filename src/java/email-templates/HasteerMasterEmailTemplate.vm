@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <LINK href="http://www.hasteer.com/Hasteer/css/hasteer.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <table style="font: 12px Arial, Helvetica, sans-serif;border: 1px solid #e5e5e5;margin-top:20px;" cellspacing="3" width="600px" align="center">
+            <tr bgcolor="#e7e6da">
+                <td valign="bottom" align="right" height="45px" width="80%">
+                    <span style="font-size: 25px;color: #555555;padding-right: 5px;">$header-msg</span>
+                </td>
+                <td valign="bottom" align="center" width="20%">
+                    <span>
+                        <img src="$base-url/Hasteer/images/logo_small.png" />
+                    </span>
+                </td>
+            </tr>
+            <tr>
+	        <td colspan="2" style="padding-top: 10px;">
+                    <p>Dear $name,</p>
+		    <p>
+			#parse($template-name)
+		    </p>
+		    <p>
+			#include("/email-templates/signature.vm")
+		    </p>
+                </td>
+            </tr>
+            #if( $unsubscribe-url )
+               <tr>
+                    <td colspan="2">
+                        #parse("/email-templates/unsubscribe.vm")
+                    </td>
+               </tr>
+            #end
+        </table>
+    </body>
+</html>

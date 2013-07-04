@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+    <!-- Definition for Home Page -->
+    <definition name="hasteer.web.index.definition" path="/layout/indexLayout.jsp">
+        <put name="header-upper" value="/layout/headerUpper.jsp" />
+        <put name="header" value="/layout/header.jsp" />
+        <put name="browser-title" value="Home" />
+        <put name="css" value="/css/hasteer.css" />
+        <put name="javascript" value="/Hasteer/js/hasteer.jsp" />
+        <put name="main-body" value="/home/Home_v2.jsp" />
+        <put name="footer" value="/layout/footer.jsp" />
+    </definition>
+
+    <!-- Base Definition for all dashboard pages -->
+    <definition name="hasteer.web.base.definition" path="/layout/baseLayout.jsp">
+        <put name="header-upper" value="/layout/headerUpper.jsp" />
+        <put name="header" value="/layout/header.jsp" />
+        <put name="css" value="/css/hasteer.css" />
+        <put name="javascript" value="/Hasteer/js/hasteer.jsp" />
+        <put name="footer" value="/layout/footer.jsp" />
+    </definition>
+
+    <!-- Base Definition for Product Details page -->
+    <definition name="hasteer.web.productDetails.definition" path="/layout/productDetailsLayout.jsp">
+        <put name="header-upper" value="/layout/headerUpper.jsp" />
+        <put name="header" value="/layout/header.jsp" />
+        <put name="css" value="/css/hasteer.css" />
+        <put name="javascript" value="/Hasteer/js/hasteer.jsp" />
+        <put name="footer" value="/layout/footer.jsp" />
+    </definition>
+
+    <!-- Definition for CreateAccount -->
+    <definition name="hasteer.web.auth.createAccount.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Create Account" />
+        <put name="page-title" value="Create Account" />
+        <put name="main-body" value="/auth/CreateAccount.jsp" />
+    </definition>
+
+    <!-- Definition for RegistrationThankYou -->
+    <definition name="hasteer.web.auth.registrationThankYou.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Thank You for Registering" />
+        <put name="page-title" value="Thank You" />
+        <put name="main-body" value="/auth/RegistrationThankYou.jsp" />
+    </definition>
+
+    <!-- Definition for Login -->
+    <definition name="hasteer.web.auth.login.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Login" />
+        <put name="page-title" value="Login" />
+        <put name="main-body" value="/auth/Login.jsp" />
+    </definition>
+
+    <!-- Definition for Logout -->
+    <definition name="hasteer.web.auth.logout.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Logout" />
+        <put name="page-title" value="You've successfully logged out" />
+        <put name="main-body" value="/auth/Logout.jsp" />
+    </definition>
+
+    <!-- Definition for Forgot My Password -->
+    <definition name="hasteer.web.auth.forgotMyPassword.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Forgot My Password" />
+        <put name="page-title" value="Forgot My Password" />
+        <put name="main-body" value="/auth/ForgotMyPassword.jsp" />
+    </definition>
+
+    <!-- Definition for Registration Confirmation -->
+    <definition name="hasteer.web.auth.registrationConfirmation.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Registration Confirmation" />
+        <put name="page-title" value="Registration Confirmation" />
+        <put name="main-body" value="/auth/RegistrationConfirmation.jsp" />
+    </definition>
+
+    <!-- Definition for MyAccount -->
+    <definition name="hasteer.web.dashboard.myAccount.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="MyAccount" />
+        <put name="page-title" value="Welcome" />
+        <put name="main-body" value="/dashboard/MyAccount.jsp" />
+    </definition>
+
+    <!-- Definition for Join Deal -->
+    <definition name="hasteer.web.deals.joinDeal.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Join Deal" />
+        <put name="page-title" value="Step 1 of 4: Join Deal" />
+        <put name="main-body" value="/deals/JoinDeal.jsp" />
+    </definition>
+
+    <!-- Definition for Verify Join Deal -->
+    <definition name="hasteer.web.deals.verifyJoinDeal.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Review Selections" />
+        <put name="page-title" value="Step 4 of 4: Review Selections" />
+        <put name="main-body" value="/deals/VerifyJoinDeal.jsp" />
+    </definition>
+
+    <!-- Definition for Join Deal Confirmation -->
+    <definition name="hasteer.web.deals.joinDealConfirmed.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Confirmation" />
+        <put name="page-title" value="Thank you for your participation in this deal!" />
+        <put name="main-body" value="/deals/JoinDealConfirmed.jsp" />
+    </definition>
+
+    <!-- Definition for Product Details Page -->
+    <definition name="hasteer.web.product.productDetails.definition" extends="hasteer.web.productDetails.definition">
+        <put name="main-body" value="/product/ProductDetails.jsp" />
+    </definition>
+
+    <!-- Definition for Search Page -->
+    <definition name="hasteer.web.deals.search.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Search Results" />
+        <put name="page-title" value="Search Results" />
+        <put name="main-body" value="/deals/Search.jsp" />
+    </definition>
+
+    <!-- Definition for Change Username & Email -->
+    <definition name="hasteer.web.dashboard.changeUsernameEmail.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Change Username and Email" />
+        <put name="page-title" value="Change Username and Email" />
+        <put name="main-body" value="/dashboard/ChangeUsernameEmail.jsp" />
+    </definition>
+
+    <!-- Definition for Change Password -->
+    <definition name="hasteer.web.dashboard.changePassword.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Change Password" />
+        <put name="page-title" value="Change Password" />
+        <put name="main-body" value="/dashboard/ChangePassword.jsp" />
+    </definition>
+
+    <!-- Definition for Deal Setup Page -->
+    <definition name="hasteer.web.dashboard.seller.dealSetup.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Deal Setup" />
+        <put name="page-title" value="Deal Setup" />
+        <put name="main-body" value="/dashboard/seller/DealSetup.jsp" />
+    </definition>
+
+    <!-- Definition for Manage Deals Page (for sellers) -->
+    <definition name="hasteer.web.dashboard.seller.manageDeals.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Manage Deals" />
+        <put name="page-title" value="Manage Deals" />
+        <put name="main-body" value="/dashboard/seller/ManageDeals.jsp" />
+    </definition>
+
+    <!-- Definition for My Deals Page (for buyers) -->
+    <definition name="hasteer.web.dashboard.buyer.myDeals.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="My Deals" />
+        <put name="page-title" value="My Deals" />
+        <put name="main-body" value="/dashboard/buyer/MyDeals.jsp" />
+    </definition>
+
+    <!-- Definition for Product Setup Page -->
+    <definition name="hasteer.web.dashboard.seller.productSetup.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Product Setup" />
+        <put name="page-title" value="Product Setup" />
+        <put name="main-body" value="/dashboard/seller/ProductSetup.jsp" />
+    </definition>
+
+    <!-- Definition for My Products Page -->
+    <definition name="hasteer.web.dashboard.seller.myProducts.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="My Products" />
+        <put name="page-title" value="My Products" />
+        <put name="main-body" value="/dashboard/seller/MyProducts.jsp" />
+    </definition>
+
+    <!-- Definition for Credit Card setup -->
+    <definition name="hasteer.web.dashboard.creditCardSetup.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Select Payment Method" />
+        <put name="page-title" value="Step 2 of 4: Select Payment Method" />
+        <put name="main-body" value="/dashboard/CreditCardSetup.jsp" />
+    </definition>
+
+    <!-- Definition for Select Shipping Address -->
+    <definition name="hasteer.web.dashboard.buyer.shipAddrSetup.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Select Shipping Address" />
+        <put name="page-title" value="Step 3 of 4: Select Shipping Address" />
+        <put name="main-body" value="/dashboard/buyer/ShipAddrForm.jsp" />
+    </definition>
+
+    <!-- Definition for Referral Rewards Summary Page -->
+    <definition name="hasteer.web.dashboard.rewardsSummary.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Referral Rewards Summary" />
+        <put name="page-title" value="Referral Rewards Summary" />
+        <put name="main-body" value="/dashboard/RewardsSummary.jsp" />
+    </definition>
+
+    <!-- Definition for Tasks Page -->
+    <definition name="hasteer.web.internal.Tasks.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Tasks" />
+        <put name="page-title" value="Tasks" />
+        <put name="main-body" value="/internal/Tasks.jsp" />
+    </definition>
+
+    <!-- Definition for Service Contract Page -->
+    <definition name="hasteer.web.common.legal.serviceContract.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Terms" />
+        <put name="page-title" value="Terms" />
+        <put name="main-body" value="/common/legal/ServiceContract.jsp" />
+    </definition>
+
+    <!-- Definition for Page Not Found Page -->
+    <definition name="hasteer.web.common.pageNotFound.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="Page Not Found" />
+        <put name="page-title" value="Oops.. Something Went Wrong!" />
+        <put name="main-body" value="/common/PageNotFound.jsp" />
+    </definition>
+
+    <!-- Definition for FAQ Page -->
+    <definition name="hasteer.web.common.faq.definition" extends="hasteer.web.base.definition">
+        <put name="browser-title" value="FAQ" />
+        <put name="page-title" value="Frequently Asked Questions" />
+        <put name="main-body" value="/common/faq.jsp" />
+    </definition>
+    
+</tiles-definitions>

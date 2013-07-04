@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/hasteer_svn/!svn/ver/193/src/test/com/util
+END
+LogUtilTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hasteer_svn/!svn/ver/344/src/test/com/util/LogUtilTest.java
+END
+AuthTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hasteer_svn/!svn/ver/193/src/test/com/util/AuthTest.java
+END
+EmailUtilTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/hasteer_svn/!svn/ver/159/src/test/com/util/EmailUtilTest.java
+END

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hasteer</property>
+    <property name="hibernate.connection.username">ecolak</property>
+    <property name="hibernate.connection.password">5451217</property>
+
+<!--
+    <property name="hibernate.connection.url">jdbc:mysql://www.hasteer.com:3306/hasteer1_devdb</property>
+    <property name="hibernate.connection.username">hasteer1_updb</property>
+    <property name="hibernate.connection.password">updb</property>
+-->
+    <!-- Hibernate Search -->
+    <!-- org.hibernate.search.store.FSDirectoryProvider -->
+    <!-- org.hibernate.search.store.RAMDirectoryProvider for test -->
+    <!--
+    <property name="hibernate.search.default.directory_provider">
+        org.hibernate.search.store.RAMDirectoryProvider
+    </property>
+    <property name="hibernate.search.default.indexBase">
+        C:\lucene
+    </property>
+    -->
+    <mapping package="com.dao"/>
+    <mapping class="com.dao.User"/>
+    <mapping class="com.dao.ShippingAddress"/>
+    <mapping class="com.dao.AdminDate"/>
+    <mapping class="com.dao.Deal"/>
+    <mapping class="com.dao.DealPricingOption"/>
+    <mapping class="com.dao.DealParticipant"/>
+    <mapping class="com.dao.DealParticipantsLog"/>
+    <mapping class="com.dao.Product"/>
+    <mapping class="com.dao.ProductCategory"/>
+    <mapping class="com.dao.ProductImage"/>
+    <mapping class="com.dao.TransactionsLog"/>
+    <mapping class="com.dao.CreditCardDetail"/>
+    <mapping class="com.dao.SearchTerm"/>
+    <mapping class="com.dao.RateCard"/>
+    <mapping class="com.dao.RateCardRate"/>
+    <mapping class="com.dao.RateCardSubscriber"/>
+    <mapping class="com.dao.RewardPointsBalance"/>
+    <mapping class="com.dao.RewardPointsLog"/>
+    <mapping class="com.dao.EmailSubscriber"/>
+    <mapping class="com.dao.EmailDispatchLog"/>
+    <mapping class="com.dao.OrderSummary"/>
+    <mapping class="com.dao.Task"/>
+    <mapping class="com.dao.BraintreeError"/>
+    <mapping class="com.dao.AdminString"/>
+    <mapping class="com.dao.ServiceContract"/>
+    <mapping class="com.dao.ContractAcceptanceLog"/>
+    <mapping class="com.dao.MerchantPolicy"/>
+  </session-factory>
+</hibernate-configuration>

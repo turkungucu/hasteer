@@ -1,0 +1,11 @@
+Thank you for your recent participation in <b>$productName</b> deal.
+Your order number is <b>$orderSummary.OrderSummaryId</b>.
+You may check the status of this deal or make changes to your selections by
+visiting the <a href="$myDealsUrl">My Deals</a> page in your account.
+<p/>
+Please note that your payment method will NOT be charged at this time. You will
+be notified via email once the deal completes successfully or expires without
+reaching the required number of participants.
+<p/>
+#parse("/email-templates/OrderSummaryEmailTemplate.vm")
+<p/>

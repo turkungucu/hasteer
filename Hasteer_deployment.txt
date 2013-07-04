@@ -1,0 +1,6 @@
+Hasteer Deployment
+1. copy existing web.xml, paste it after deployment
+2. change hibernate.cfg.xml
+3. delete product images folder
+4. Change log4j.properties log path
+5. restart server

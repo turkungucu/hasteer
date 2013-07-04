@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+
+<!--
+     This is a minimal Validator form file with a couple of examples.
+-->
+
+    <global>
+
+        <!-- An example global constant
+        <constant>
+            <constant-name>postalCode</constant-name>
+            <constant-value>^\d{5}\d*$</constant-value>
+        </constant>
+        end example-->
+
+    </global>
+
+    <formset>
+
+        <form name="LoginForm">
+            <field
+                property="username"
+                depends="required">
+                    <arg0 key="LoginForm.username" resource="true" />
+            </field>
+            <field
+                property="password"
+                depends="required">
+                    <arg0 key="LoginForm.password" resource="true" />
+            </field>
+        </form>
+
+        <form name="CreateAccountForm">
+            <field
+                property="username"
+                depends="required,minlength,maxlength,mask">
+                    <arg0 key="CreateAccountForm.username" resource="true" />
+                    <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+                    <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <msg name="mask" key="CreateAccountForm.errors.alphanumeric" />
+                    <var>
+                        <var-name>minlength</var-name>
+                        <var-value>6</var-value>
+                    </var>
+                    <var>
+                        <var-name>maxlength</var-name>
+                        <var-value>50</var-value>
+                    </var>
+                    <var>
+                        <var-name>mask</var-name>
+                        <var-value>^[a-zA-Z0-9]*$</var-value>
+                    </var>
+            </field>
+            <field
+                property="email1"
+                depends="required,email,maxlength">
+                    <arg0 key="CreateAccountForm.email1" resource="true" />
+                    <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var>
+                        <var-name>maxlength</var-name>
+                        <var-value>50</var-value>
+                    </var>
+            </field>
+            <field
+                property="email2"
+                depends="required,email">
+                    <arg0 key="CreateAccountForm.email2" resource="true" />
+            </field>
+            <field
+                property="password1"
+                depends="required,minlength,maxlength">
+                    <arg0 key="CreateAccountForm.password1" resource="true"/>
+                    <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+                    <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var>
+                        <var-name>minlength</var-name>
+                        <var-value>6</var-value>
+                    </var>
+                    <var>
+                        <var-name>maxlength</var-name>
+                        <var-value>15</var-value>
+                    </var>
+            </field>
+            <field
+                property="password2"
+                depends="required">
+                    <arg0 key="CreateAccountForm.password2" resource="true"/>
+            </field>
+        </form>
+
+        <form name="RegistrationConfirmationForm">
+            <field
+                property="uid"
+                depends="required">
+                    <arg0 key="RegistrationConfirmationForm.uid" resource="true" />
+            </field>
+            <field
+                property="confCode"
+                depends="required">
+                    <arg0 key="RegistrationConfirmationForm.confCode" resource="true" />
+            </field>
+        </form>
+
+        <form name="ForgotMyPasswordForm">
+            <field
+                property="emailAddr"
+                depends="required,email">
+                    <arg0 key="ForgotMyPasswordForm.emailAddr" resource="true" />
+            </field>
+        </form>
+
+        <form name="ChangeUsernameEmailForm">
+            <field
+                property="username"
+                depends="required">
+                    <arg0 key="ChangeUsernameEmailForm.username" resource="true" />
+            </field>
+            <field
+                property="email"
+                depends="required,email">
+                    <arg0 key="ChangeUsernameEmailForm.email" resource="true" />
+            </field>
+            <field
+                property="password"
+                depends="required">
+                    <arg0 key="ChangeUsernameEmailForm.password" resource="true"/>
+            </field>
+        </form>
+
+        <form name="ChangePasswordForm">
+            <field
+                property="oldPassword"
+                depends="required">
+                    <arg0 key="ChangePasswordForm.oldpassword" resource="true"/>
+            </field>
+            <field
+                property="newPassword1"
+                depends="required,minlength,maxlength">
+                    <arg0 key="ChangePasswordForm.newpassword" resource="true"/>
+                    <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+                    <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var>
+                        <var-name>minlength</var-name>
+                        <var-value>6</var-value>
+                    </var>
+                    <var>
+                        <var-name>maxlength</var-name>
+                        <var-value>15</var-value>
+                    </var>
+            </field>
+            <field
+                property="newPassword2"
+                depends="required,minlength,maxlength">
+                    <arg0 key="ChangePasswordForm.newpassword" resource="true"/>
+                    <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+                    <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var>
+                        <var-name>minlength</var-name>
+                        <var-value>6</var-value>
+                    </var>
+                    <var>
+                        <var-name>maxlength</var-name>
+                        <var-value>15</var-value>
+                    </var>
+            </field>
+        </form>
+
+        <form name="ProductSetupForm">
+            <field
+                property="productName"
+                depends="required">
+                    <arg0 key="ProductSetupForm.productName" resource="true" />
+            </field>
+            <field
+                property="details"
+                depends="maxlength">
+                    <arg0 key="ProductSetupForm.details" resource="true"/>
+                    <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var>
+                        <var-name>maxlength</var-name>
+                        <var-value>3000</var-value>
+                    </var>
+            </field>
+            <field
+                property="primaryImageNumber"
+                depends="required">
+                    <arg0 key="ProductSetupForm.primaryImageNumber" resource="true" />
+            </field>
+            <field
+                property="weight"
+                depends="required,double">
+                    <arg0 key="ProductSetupForm.weight" resource="true" />
+            </field>
+            <field
+                property="length"
+                depends="required,double">
+                    <arg0 key="ProductSetupForm.length" resource="true" />
+            </field>
+            <field
+                property="height"
+                depends="required,double">
+                    <arg0 key="ProductSetupForm.height" resource="true" />
+            </field>
+            <field
+                property="width"
+                depends="required,double">
+                    <arg0 key="ProductSetupForm.width" resource="true" />
+            </field>
+        </form>
+
+        <form name="CreditCardSetupForm">
+            <field
+                property="firstName"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.firstName" resource="true" />
+            </field>
+            <field
+                property="lastName"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.lastName" resource="true" />
+            </field>
+            <field
+                property="address1"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.address1" resource="true" />
+            </field>
+            <field
+                property="city"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.city" resource="true" />
+            </field>
+            <field
+                property="state"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.state" resource="true" />
+            </field>
+            <field
+                property="zipCode"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.zipCode" resource="true" />
+            </field>
+            <field
+                property="country"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.country" resource="true" />
+            </field>
+            <field
+                property="cardholderName"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.cardholderName" resource="true" />
+            </field>
+            <field
+                property="creditCardNumber"
+                depends="required, creditCard">
+                    <arg0 key="CreditCardSetupForm.creditCardNumber" resource="true" />
+            </field>
+            <field
+                property="cardType"
+                depends="required">
+                    <arg0 key="CreditCardSetupForm.cardType" resource="true" />
+            </field>
+            <field
+                property="expMonth"
+                depends="required,integer,intRange">
+                    <arg0 key="CreditCardSetupForm.expMonth" resource="true" />
+                    <arg1 name="intRange" key="${var:min}" resource="false"/>
+                    <arg2 name="intRange" key="${var:max}" resource="false"/>
+                    <var>
+                        <var-name>min</var-name>
+                        <var-value>1</var-value>
+                    </var>
+                    <var>
+                        <var-name>max</var-name>
+                        <var-value>12</var-value>
+                    </var>
+            </field>
+
+            <field
+                property="expYear"
+                depends="required,integer,intRange">
+                    <arg0 key="CreditCardSetupForm.expYear" resource="true" />
+                    <arg1 name="intRange" key="${var:min}" resource="false"/>
+                    <arg2 name="intRange" key="${var:max}" resource="false"/>
+                    <var>
+                        <var-name>min</var-name>
+                        <var-value>2010</var-value>
+                    </var>
+                    <var>
+                        <var-name>max</var-name>
+                        <var-value>2017</var-value>
+                    </var>
+            </field>
+            
+            <field
+                property="cvv"
+                depends="required,integer,minlength,maxlength">
+                    <arg0 key="CreditCardSetupForm.cvv" resource="true" />
+                    <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+                    <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                    <var>
+                        <var-name>minlength</var-name>
+                        <var-value>3</var-value>
+                    </var>
+                    <var>
+                        <var-name>maxlength</var-name>
+                        <var-value>4</var-value>
+                    </var>
+            </field>
+            
+        </form>
+
+        <form name="DealSetupForm">
+            <field
+                property="dealName"
+                depends="required">
+                    <arg0 key="DealSetupForm.dealName" resource="true" />
+            </field>
+            <field
+                property="startDate"
+                depends="required,date">
+                    <arg0 key="DealSetupForm.startDate" resource="true" />
+                    <var><var-name>datePattern</var-name><var-value>MM/dd/yyyy</var-value></var>
+            </field>
+            <field
+                property="endDate"
+                depends="required,date">
+                    <arg0 key="DealSetupForm.endDate" resource="true" />
+                    <var><var-name>datePattern</var-name><var-value>MM/dd/yyyy</var-value></var>
+            </field>
+            <field
+                property="retailPrice"
+                depends="required">
+                    <arg0 key="DealSetupForm.retailPrice" resource="true" />
+            </field>
+            <field
+                property="minNum1"
+                depends="required,integer">
+                    <arg0 key="DealSetupForm.minNum1" resource="true" />
+            </field>
+            <field
+                property="price1"
+                depends="required,double">
+                    <arg0 key="DealSetupForm.price1" resource="true" />
+            </field>
+            <field
+                property="minNum2"
+                depends="integer">
+                    <arg0 key="DealSetupForm.minNum2" resource="true" />
+            </field>
+            <field
+                property="price2"
+                depends="double">
+                    <arg0 key="DealSetupForm.price2" resource="true" />
+            </field>
+            <field
+                property="minNum3"
+                depends="integer">
+                    <arg0 key="DealSetupForm.minNum3" resource="true" />
+            </field>
+            <field
+                property="price3"
+                depends="double">
+                    <arg0 key="DealSetupForm.price3" resource="true" />
+            </field>
+            <field
+                property="minNum4"
+                depends="integer">
+                    <arg0 key="DealSetupForm.minNum4" resource="true" />
+            </field>
+            <field
+                property="price4"
+                depends="double">
+                    <arg0 key="DealSetupForm.price4" resource="true" />
+            </field>
+            <field
+                property="minNum5"
+                depends="integer">
+                    <arg0 key="DealSetupForm.minNum5" resource="true" />
+            </field>
+            <field
+                property="price5"
+                depends="double">
+                    <arg0 key="DealSetupForm.price5" resource="true" />
+            </field>
+        </form>
+
+        <form name="ManageShipAddrsForm">
+            <field
+                property="firstName"
+                depends="required">
+                    <arg0 key="ManageShipAddrsForm.firstName" resource="true" />
+            </field>
+            <field
+                property="lastName"
+                depends="required">
+                    <arg0 key="ManageShipAddrsForm.lastName" resource="true" />
+            </field>
+            <field
+                property="address1"
+                depends="required">
+                    <arg0 key="ManageShipAddrsForm.address1" resource="true" />
+            </field>
+            <field
+                property="city"
+                depends="required">
+                    <arg0 key="ManageShipAddrsForm.city" resource="true" />
+            </field>
+            <field
+                property="state"
+                depends="required">
+                    <arg0 key="ManageShipAddrsForm.state" resource="true" />
+            </field>
+            <field
+                property="zipCode"
+                depends="required">
+                    <arg0 key="ManageShipAddrsForm.zipCode" resource="true" />
+            </field>
+            <field
+                property="country"
+                depends="required">
+                    <arg0 key="ManageShipAddrsForm.country" resource="true" />
+            </field>
+        </form>
+
+        <form name="SelectPaymentOptionForm">
+            <field property="ccId" depends="required,integer">
+                <arg0 key="SelectPaymentOptionForm.ccId" resource="true" />
+            </field>
+        </form>
+
+        <form name="SelectShippingForm">
+            <field property="addrId" depends="required,integer">
+                <arg0 key="SelectShippingForm.addrId" resource="true" />
+            </field>
+        </form>
+
+        <form name="JoinDealForm">
+            <field property="prOptionId" depends="required,integer">
+                <arg0 key="JoinDealForm.prOptionId" resource="true" />
+            </field>
+            <field property="quantity" depends="required,integer">
+                <arg0 key="JoinDealForm.quantity" resource="true" />
+            </field>
+            <field property="redeemedPoints" depends="integer">
+                <arg0 key="JoinDealForm.redeemedPoints" resource="true" />
+            </field>
+        </form>
+
+        <form name="TasksForm">
+            <field property="taskName" depends="required">
+                <arg0 key="TasksForm.taskName" resource="true" />
+            </field>
+            <field property="className" depends="required">
+                <arg0 key="TasksForm.className" resource="true" />
+            </field>
+            <field property="delay" depends="integer">
+                <arg0 key="TasksForm.delay" resource="true" />
+            </field>
+            <field property="period" depends="integer">
+                <arg0 key="TasksForm.period" resource="true" />
+            </field>
+        </form>
+
+    </formset>
+
+</form-validation>

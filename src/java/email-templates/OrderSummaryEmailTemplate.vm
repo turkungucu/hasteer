@@ -1,0 +1,66 @@
+<table style="font: 12px Arial, Helvetica, sans-serif;" width="100%">
+    <tr style="background-color: #999999;color:#ffffff;">
+        <th>Billing Address</th>
+        <th>Shipping Address</th>
+    </tr>
+    <tr>
+        <td>$ccDetail.FullAddress</td>
+        <td>$shippingAddress</td>
+    </tr>
+</table>
+<p/>
+<table style="font: 12px Arial, Helvetica, sans-serif;text-align:center;" width="100%">
+    <tr style="background-color: #999999;color:#ffffff;">
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Subtotal</th>
+    </tr>
+    <tr>
+        <td>$productName</td>
+        <td>$orderSummary.Quantity</td>
+        <td>$ $orderSummary.FormattedUnitPrice</td>
+        <td>$ $orderSummary.FormattedSubtotal</td>
+    </tr>
+</table>
+<p/>
+<table style="font: 12px Arial, Helvetica, sans-serif;text-align:center;" width="50%">
+    <tr style="background-color: #999999;color:#ffffff;">
+        <th>Summary of Charges</th>
+    </tr>
+    <tr>
+        <td align="left">
+            <table style="font: 12px Arial, Helvetica, sans-serif;" cellspacing="0">
+                <tr>
+                    <td width="80%">Subtotal</td><td nowrap>$ $orderSummary.FormattedSubtotal</td>
+                </tr>
+                <tr>
+                    <td>Tax</td><td>$ $orderSummary.FormattedTax</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td><td>$ $orderSummary.FormattedShippingCost</td>
+                </tr>
+                #if($orderSummary.RedeemedAmount > 0)
+                    <tr>
+                        <td>Redeemed Amount</td><td>- $ $orderSummary.FormattedRedeemedAmount</td>
+                    </tr>
+                #end
+                <tr>
+                    <td>Total</td><td nowrap><b>$ $orderSummary.FormattedTotal</b></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<p/>
+<table style="font: 12px Arial, Helvetica, sans-serif;text-align:center;" width="50%">
+    <tr style="background-color: #999999;color:#ffffff;">
+        <th>Payment Method</th>
+    </tr>
+    <tr>
+        <td align="left">
+            $ccDetail.CardType: $ccDetail.MaskedCardNumber <br/>
+            Exp: $ccDetail.FormattedExpiryDate
+        </td>
+    </tr>
+</table>

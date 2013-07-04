@@ -1,0 +1,76 @@
+Test 1 
+Deal: Armani Cologne
+Scenario: Have 10 ppl join at lowest price. 
+Result: All are submitted for settlement successfully.
+
+Test 2
+Deal: Abercrombie
+Scenario: Have 10 ppl join. 5 join at lowest price, 5 join at a higher price.
+Result: All are submitted for settlement at lowest price successfully.
+
+Test 3
+Deal: Chanel
+Scenario: Have 5 ppl join at $70, 2 ppl join at $60.
+Result: 5 ppl are settled, 2 ppl get voided.
+
+Test 4
+Deal: Ferre Rose
+Scenario: Have 7 ppl join at lowest price. 
+Result: Noone gets it. All are voided.
+
+Test 5
+Deal: Mustang cologne
+Scenario: Have 10 ppl join at lowest price. Some should have rewards points
+Result: Rewards points should be deducted from the settlement price
+
+------------------------------------------------------------------------
+
+guest1 
+Fenasi Kerim
+1000 El Camino Real
+San Mateo, CA, 94401
+
+guest2
+Cetin Ceviz
+1000 Walnut St.
+Walnut Creek, CA, 94595
+
+guest3
+Fecisi Kerim
+232 Cowper St.
+Palo Alto, CA, 94301
+
+guest4
+Seyime Gundogdu
+111 Elm St.
+Buffalo, NY, 14228
+
+guest5
+Mike Hunt
+15 Hunt St.
+Seattle, WA, 98005
+
+guest6
+Ben Dover
+666 Main St.
+St. Louis, MI, 56402
+
+guest7
+Orama Koma
+1234 Laurel St.
+San Carlos, CA, 95404
+
+guest8
+Pamela Handerson
+1100 Silicon St.
+Los Angeles, CA, 95656
+
+guest9
+Nadir Verir
+2424 5th Ave.
+New York, NY, 14344
+
+guest10
+Lionel Messi
+1222 Ball St.
+Miami, FL, 34222

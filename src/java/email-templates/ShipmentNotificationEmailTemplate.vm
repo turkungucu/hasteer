@@ -1,0 +1,7 @@
+We are pleased to inform you know that your order <b>#$orderSummary.OrderSummaryId</b>
+has been shipped. You can track the status of this order online by <a href="$trackUrl">clicking here</a>.
+<p/>
+Below is the final summary of the order:
+<p/>
+#parse("/email-templates/OrderSummaryEmailTemplate.vm")
+<p/>
